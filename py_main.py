@@ -26,7 +26,9 @@ def print_dict(kname, d):
     if bo_has_dict:
         print "type st_" + kname + " struct{"
         for k, v in d.iteritems():
-            if isinstance(v, int):
+            if isinstance(v, bool):
+                print "\t" + k.capitalize() + " bool\t" + '`json:"%s"`' % k
+            elif isinstance(v, int):
                 print "\t" + k.capitalize() + " int\t" + '`json:"%s"`' % k
             elif isinstance(v, float):
                 print "\t" + k.capitalize() + " float32\t" + '`json:"%s"`' % k
@@ -57,7 +59,9 @@ def print_dict(kname, d):
     else:
         print "type st_" + kname + " struct{"
         for k, v in d.iteritems():
-            if isinstance(v, int):
+            if isinstance(v, bool):
+                print "\t" + k.capitalize() + " bool\t" + '`json:"%s"`' % k
+            elif isinstance(v, int):
                 print "\t" + k.capitalize() + " int\t" + '`json:"%s"`' % k
             elif isinstance(v, float):
                 print "\t" + k.capitalize() + " float32\t" + '`json:"%s"`' % k
