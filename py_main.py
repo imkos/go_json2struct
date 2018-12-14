@@ -56,7 +56,7 @@ def print_dict(kname, d):
                         ) + " []string\t" + '`json:"%s"`' % k
             elif isinstance(v, dict):
                 print "\t" + k.capitalize() + " %s_%s_%s\t" % (
-                    "*st", kname, k) + '`json:"%s"`' % k
+                    "*st", kname, k) + '`json:"%s,omitempty"`' % k
         print "}\n"
     else:
         print "type st_" + kname + " struct{"
