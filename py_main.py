@@ -228,6 +228,7 @@ def main():
         "ret_float" : 2.36,
         "list": [{"name":"1", "val": 2}],
         "list_int": [2,3],
+        "long_val": 1234567890123,
         "param":{
             "list": [{"name":"1", "val": 2, "ll":[2,2.1]}],
             "list_int": [2,3],
@@ -235,7 +236,9 @@ def main():
             "ext":{
                 "name": "1001"
             }
-'''
+        },
+        "ret_msg" : "DD200207;交易处理中!"
+    }'''
     jo = json.loads(s_json, "utf-8")
     if isinstance(jo, Iterable):
         print_dictV2("resp", jo)
